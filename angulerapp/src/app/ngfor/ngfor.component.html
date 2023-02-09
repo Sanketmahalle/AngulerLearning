@@ -1,4 +1,4 @@
-<p>ngfor works!</p>
+<p>*ngfor Assignment</p>
 <!-- <div>
     <div>{{titlr}}</div>
 
@@ -25,9 +25,8 @@
   </table>
 </div> -->
 
-<ol>
-  <li *ngFor="let country of countries" scope="row" > {{country.name}}</li>
-  <li *ngFor="let state of state"> {{state}}</li>
+<!-- <ol>
+
   <li>
     <label>
       Select a state:
@@ -43,16 +42,32 @@
 
     <label>
       Select a country:
-      <select [(ngModel)]="selectedCountry" (ngModelChange)="updateStates()">
+      <select [(ngModel)]="selectedCountry" (ngModelChange)="updateStates()" >
+        <option   value="none" selected disabled hidden  >Select your country</option>
         <option *ngFor="let country of countries" [value]="country.name">
           {{ country.name }}
         </option>
       </select>
     </label>
   </li>
-</ol>
+</ol> -->
 
 
+
+<div>
+  <label>Select Country:</label>
+  <select [(ngModel)]="selectedCountry" (ngModelChange)="updateStates()">
+    <option value="">Select your country</option>
+    <option *ngFor="let country of countries" [value]="country.code"  >{{country.name}}</option>
+  </select>
+</div>
+<br>
+<div>
+  <label>Select State:</label>
+  <select [(ngModel)]="selectedState">
+    <option *ngFor="let state of states" [value]="state.code">{{state.name}}</option>
+  </select>
+</div>
 
 
 

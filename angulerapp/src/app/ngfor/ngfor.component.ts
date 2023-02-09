@@ -19,35 +19,50 @@ fevSong=['s1','s2','s3','s4'];
 
 
 
+// countries = [
+//   {
+//     name: 'USA',
+//     states: [
+//       { name: 'Alabama' },
+//       { name: 'Alaska' },
+//       // Add more states here
+//     ]
+//   },
+//   {
+//     name: 'Canada',
+//     states: [
+//       { name: 'Alberta' },
+//       { name: 'British Columbia' },
+//       // Add more states here
+//     ]
+//   }
+//   // Add more countries here
+// ];
+
+// selectedCountry = '';
+// selectedState = '';
+// states = [];
+
+selectedCountry = 'IN';
+selectedState = 'AP';
 countries = [
-  {
-    name: 'USA',
-    states: [
-      { name: 'Alabama' },
-      { name: 'Alaska' },
-      // Add more states here
-    ]
-  },
-  {
-    name: 'Canada',
-    states: [
-      { name: 'Alberta' },
-      { name: 'British Columbia' },
-      // Add more states here
-    ]
-  }
-  // Add more countries here
+  { code: 'IN', name: 'India', states: [{ code: 'AP', name: 'Andhra Pradesh' }, { code: 'TS', name: 'Telangana' }] },
+  { code: 'US', name: 'United States', states: [{ code: 'NY', name: 'New York' }, { code: 'CA', name: 'California' }] },
+  { code: 'UK', name: 'United Kingdom', states: [{ code: 'LN', name: 'London' }, { code: 'BH', name: 'Birmingham' }] },
 ];
-
-selectedCountry = '';
-selectedState = '';
 states = [];
-
   constructor() { }
 
  
   updateStates() {
-    this.states = this.countries.find(country => country.name === this.selectedCountry).states;
+    const selectedCountryData = this.countries.find(country => country.code === this.selectedCountry);
+    this.states = selectedCountryData ? selectedCountryData.states : [];
+    if (this.states.length) {
+      this.selectedState = this.states[0].code;
+    }
+   
+   
+  //  this.states = this.countries.find(country => country.name === this.selectedCountry).states;
   }
   ngOnInit() {
     this.updateStates();
