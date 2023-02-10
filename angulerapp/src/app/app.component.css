@@ -4,8 +4,12 @@
 h1{
     color: crimson;
 }
+img{
+
+  margin-left: 350px;
+}
 .data{
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     flex-direction: column;
