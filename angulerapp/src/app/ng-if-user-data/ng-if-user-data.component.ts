@@ -15,7 +15,7 @@ export class NgIfUserDataComponent implements OnInit {
   showUserList = true;
 
   addUser() {
-    this.users.push({ name: 'New User', email: 'new.user@example.com' });
+    this.users.push({ name: 'New User', email: 'new.user@gmail.com' });
     this.showUserList = true;
   }
 

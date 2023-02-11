@@ -15,6 +15,8 @@ import { NgForProductDataComponent } from './ng-for-product-data/ng-for-product-
 import { NgIfPracticeComponent } from './ng-if-practice/ng-if-practice.component';
 import { NgIfUserDataComponent } from './ng-if-user-data/ng-if-user-data.component';
 import { NgForNgIfPracticeComponent } from './ng-for-ng-if-practice/ng-for-ng-if-practice.component';
+import { NgSwitchComponent } from './ng-switch/ng-switch.component';
+import { DirectivesAssignComponent } from './directives-assign/directives-assign.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { NgForNgIfPracticeComponent } from './ng-for-ng-if-practice/ng-for-ng-if
     NgIfPracticeComponent,
     NgIfUserDataComponent,
     NgForNgIfPracticeComponent,
+    NgSwitchComponent,
+    DirectivesAssignComponent,
    
   ],
   imports: [

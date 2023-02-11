@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgForNgIfPracticeComponent implements OnInit {
   todos = [
-    { text: 'Learn Angular', isComplete: true },
-    { text: 'Build an app', isComplete: false }
+    { text: 'Angular Assignment using *ngFor', isComplete: true },
+    { text: 'Angular Assignment using *ngIn', isComplete: false }
   ];
   newTodoText = '';
 
