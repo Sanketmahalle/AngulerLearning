@@ -51,6 +51,10 @@ import { AssinReactiveComponent } from './assin-reactive/assin-reactive.componen
 import { ReactiveFormAssignment2Component } from './reactive-form-assignment2/reactive-form-assignment2.component';
 import { BlackBoxComponent } from './black-box/black-box.component';
 import { ValidationComponent } from './validation/validation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { Content1Component } from './content1/content1.component';
+import { MyserviceService } from './services/my-service.service';
+import { UserDataService } from './services/user-data.service';
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 
@@ -77,10 +81,11 @@ import { ValidationComponent } from './validation/validation.component';
     ReactiveFormAssignment2Component,
     BlackBoxComponent,
     ValidationComponent,
+    Content1Component,
    
   ],
   imports: [
-  
+  HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -111,7 +116,7 @@ import { ValidationComponent } from './validation/validation.component';
     ReactiveFormsModule
     
   ],
-  providers: [],
+  providers: [MyserviceService,UserDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

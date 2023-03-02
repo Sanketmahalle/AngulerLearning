@@ -64,3 +64,9 @@
         </div>
     </div>
 </div>
+
+<ng-container *ngFor="let product of products">
+    Product Name : <strong class="text-success">{{product.name}}</strong>
+    Product Id : <strong class="text-success">{{product.id}}</strong>
+    
+    </ng-container>

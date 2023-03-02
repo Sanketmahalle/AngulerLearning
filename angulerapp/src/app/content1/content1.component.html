@@ -1,0 +1,51 @@
+<p>content1 works!</p>
+<!-- <div class="card">
+   <div class="card-body">
+    <ng-container *ngFor="let product of product ">
+        Product name : <strong class="text-success">{{product.name}}</strong> 
+         id <strong class="text-success">{{product.id}}</strong><br>
+         username <strong class="text-success">{{product.username}}</strong>
+         
+    </ng-container>
+  </div>
+ </div> -->
+ <table mat-table [dataSource]="users" class="my-table">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone </th>
+        <td mat-cell *matCellDef="let user"> {{user.phone}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="website">
+        <th mat-header-cell *matHeaderCellDef> Website </th>
+        <td mat-cell *matCellDef="let user"> {{user.website}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="company">
+        <th mat-header-cell *matHeaderCellDef> company </th>
+        <td mat-cell *matCellDef="let user"> {{user.company.name}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> address </th>
+        <td mat-cell *matCellDef="let user"> {{user.address.city}} </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['id', 'name', 'email','phone','website','company','address']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'email', 'phone','website','company','address']"></tr>
+  </table>
+  

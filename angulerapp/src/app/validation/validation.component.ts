@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserDataService } from '../services/user-data.service';
 @Component({
   selector: 'app-validation',
   templateUrl: './validation.component.html',
@@ -12,20 +13,22 @@ export class ValidationComponent implements OnInit {
     { name: 'Jane', email: 'jane@example.com' },
     { name: 'Bob', email: 'bob@example.com' }
   ];
-
+  products ={}
   alreadyAddedUsers: { name: string, email: string, newlyAdded: boolean }[] = [];
   newlyAddedUsers: { name: string, email: string, newlyAdded: boolean }[] = [];
   nameAlreadyTaken = false;
   emailAlreadyTaken = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,private myservice: UserDataService) {
     this.userForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
   }
+
+ 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+this.products = this.myservice.products
   }
 
   onSubmit() {

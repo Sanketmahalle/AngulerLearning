@@ -1,6 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component } from '@angular/core';
 import { ThemePalette } from '@angular/material';
+import { UserDataService } from './services/user-data.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent {
   checked = false;
   disabled = false;
   title = 'angulerapp';
+  users;
   //  today :Date=new Date();
 parentToChild: string="I am coming from parent";
 post=[
@@ -35,7 +37,7 @@ post=[
   username:string='';
   imageUrl='https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg';
 
-  constructor() {
+  constructor(private userService:UserDataService) {
     this.jstoday = formatDate(this.today, 'dd/MM/yyyy  hh:mm:ss a', 'en-US', '+0530');
   }
 

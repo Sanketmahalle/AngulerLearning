@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { MyserviceService } from '../services/my-service.service';
+import { UserDataService } from '../services/user-data.service';
 
 @Component({
   selector: 'app-reactive-form',
@@ -9,18 +11,24 @@ import { Observable } from 'rxjs';
 })
 export class ReactiveFormComponent implements OnInit {
   notAllowedNames=['jack','harry'];
-
+  products={}
+  users ;
   takenEmails: string[] = ['test@gmail.com'];
 
   isSubmitted: boolean = false;
   myReactiveForm: FormGroup;
-  constructor(private _fb: FormBuilder) { 
+  constructor(private _fb: FormBuilder,private myservice: MyserviceService,private userService:UserDataService) { 
     this.createForm();
   }
-  ngOnInit() {
+  ngOnInit(): void {
+    this.products = this.myservice.products;
+    this.userService.getUsers().subscribe(res => {
+      console.log('user api results', res);
+    }, err => {
+      console.log(err);
+    })  }
 
  
-  }
   createForm()
   {
     // this.myReactiveForm = new FormGroup({

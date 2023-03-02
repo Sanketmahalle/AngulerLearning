@@ -1,11 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyserviceService {
   showAge;
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ageCalculator(age: any) : number
   {
@@ -18,7 +20,15 @@ export class MyserviceService {
   print() {
     alert('print method called');
   }
-
+url= 'https://jsonplaceholder.typicode.com/users';
+getUsers() :Observable<any>{
+    return this.http.get<any[]>(this.url);
+  }
+  // products=[
+  //   { name: 'computer', id:101  },
+  //   { name: 'tv', id:102  },
+  //   { name: 'laptop', id:103  },
+  // ]
   display() {
     alert ('display called');
   }
