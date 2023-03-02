@@ -1,0 +1,110 @@
+<!-- <div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2>Add User</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter name">
+          <div *ngIf="nameAlreadyTaken" class="text-danger">This name is already taken.</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter email">
+          <div *ngIf="emailAlreadyTaken" class="text-danger">This email is already taken.</div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid || nameAlreadyTaken || emailAlreadyTaken">Add User</button>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2>Add User</h2>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+
+          <div class="subscribe">
+            <p>User name and Email checker</p>
+            <div><input type="text" formControlName="name" class="form-control"
+                id="name" placeholder="Enter name">
+              <div *ngIf="nameAlreadyTaken" class="text-danger">This name is
+                already taken.</div>
+            </div>
+
+            <br>
+            <br>
+            <div> <input type="email" formControlName="email"
+                class="form-control" id="email" placeholder="Enter email">
+              <div *ngIf="emailAlreadyTaken" class="text-danger">This email is
+                already taken.</div></div>
+
+            <br>
+
+            <button type="submit" class="submit-btn"
+              [disabled]="userForm.invalid || nameAlreadyTaken ||
+              emailAlreadyTaken">Add User</button>
+
+
+          </div>
+
+          <!-- <label for="name">Name</label> -->
+          <!-- <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter name"> -->
+          <!-- <div *ngIf="nameAlreadyTaken" class="text-danger">This name is already taken.</div> -->
+        </div>
+        <!-- <div class="form-group">
+          
+          <label for="email">Email</label>
+          <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter email">
+          <div *ngIf="emailAlreadyTaken" class="text-danger">This email is already taken.</div>
+        </div> -->
+        <!-- <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid || nameAlreadyTaken || emailAlreadyTaken">Add User</button> -->
+      </form>
+    </div>
+  </div>
+
+  <div class="row mt-5" id="below">
+    <div class="col-md-6">
+      <h2>Already Added Users</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of alreadyAddedUsers" [ngClass]="{
+            'table-success': user.newlyAdded }">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h2>Newly Added Users</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of newlyAddedUsers" [ngClass]="{ 'table-info':
+            user.newlyAdded }">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="">
+  
+</div>

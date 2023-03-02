@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-test2',
@@ -7,6 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class Test2Component implements OnInit {
  @Input() child : string;
+
+
+ 
   constructor() { }
 
   ngOnInit() {

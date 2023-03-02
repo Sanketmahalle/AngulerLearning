@@ -1,5 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component } from '@angular/core';
+import { ThemePalette } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -7,20 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  color: ThemePalette = 'accent';
+  checked = false;
+  disabled = false;
   title = 'angulerapp';
   //  today :Date=new Date();
 parentToChild: string="I am coming from parent";
 post=[
   {
-    title: 'Sanket Mahalle',
+    title: '',
     content: 'i am upComing anguler developer'
   },
   {
-    title: 'Ritesh Kamble',
+    title: '',
     content: 'i am upComing anguler developer'
   },
   {
-    title: 'Maruti Pandhare',
+    title: '',
     content: 'i am upComing anguler developer'
   }
 ]
