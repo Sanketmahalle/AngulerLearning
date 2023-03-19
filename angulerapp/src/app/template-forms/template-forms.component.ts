@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { from } from 'rxjs';
+import { MyserviceService } from '../services/my-service.service';
 
 @Component({
   selector: 'app-template-forms',
@@ -49,8 +51,10 @@ export class TemplateFormsComponent implements OnInit {
 
   }
   login(form: NgForm) {
+    this.rout.navigate(['/userinfo']) // to redirect another page
     this.isSubmitted = true;
 console.log(form);
+
 
  this.formData.email = form.value.email;
  this.formData.password = form.value.password;
@@ -65,7 +69,7 @@ form.controls['gender'].patchValue('Male');
 
   }
       
-  constructor() { }
+  constructor(private objService:MyserviceService,private rout:Router) { }
 
   ngOnInit() {
   }

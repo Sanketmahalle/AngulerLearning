@@ -1,0 +1,11 @@
+
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .container {
+    background-image: linear-gradient(to right top, #051937, #003d61, #006481, #008d94, #00b597, #36c89c, #57dba0, #76eea3, #69f2b9, #5ff6cd, #5bf9e0, #5ffbf1);    background-position: center center;
+  }
+  

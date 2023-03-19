@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="table-responsive shadow-lg p-1 mb-1 bg-white rounded">
+          <h3 style="color: brown;">News data from API</h3>
+          <table class="table table-hover table-bordered table-news">
+            <thead class="thead-light">
+              <tr>
+                <th>UUID</th>
+                <th>Title</th>
+                <th>Publisher</th>
+                <th>Link</th>
+                <th>Publish Time</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of news">
+                <td>{{item.uuid}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.publisher}}</td>
+                <td><a href="{{item.link}}" target="_blank">{{item.link}}</a></td>
+                <td>{{item.providerPublishTime}}</td>
+                <td>{{item.type}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="table-responsive shadow-lg p-1 mb-1 bg-white rounded">
+          <h3 style="color: brown;">Quotes data from API</h3>
+          <table class="table table-hover table-bordered table-quotes">
+            <thead class="thead-light">
+              <tr>
+                <th>Exchange</th>
+                <th>Industry</th>
+                <th>Short Name</th>
+                <th>Quote Type</th>
+                <th>Symbol</th>
+                <th>Index</th>
+                <th>Long Name</th>
+                <th>Sector</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of quotes">
+                <td>{{item.exchange}}</td>
+                <td>{{item.industry}}</td>
+                <td>{{item.shortname}}</td>
+                <td>{{item.quoteType}}</td>
+                <td>{{item.symbol}}</td>
+                <td>{{item.index}}</td>
+                <td>{{item.longname}}</td>
+                <td>{{item.sector}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

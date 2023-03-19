@@ -1,0 +1,157 @@
+
+<!-- <h2>Fashion Items</h2>
+<ul>
+  <li *ngFor="let fashion of fashions">
+    <a routerLink="/fashiondetails/{{ fashion.id }}">{{ fashion.name }}</a>
+    <p>{{ fashion.description }}</p>
+  </li>
+</ul> -->
+<!-- <h2>Fashion Items</h2>
+<ul>
+  <li *ngFor="let fashion of fashions">
+    <a routerLink="/fashiondetails/{{ fashion.id }}">{{ fashion.name }}</a>
+    <p>{{ fashion.description }}</p>
+    <img [src]="fashion.imageUrl" alt="{{ fashion.name }} image">
+  </li>
+</ul> -->
+
+<!-- <h2>Fashion Items</h2>
+<ul>
+  <li *ngFor="let item of fashionItems">
+    <a routerLink="/fashiondetails/{{ item.id }}">{{ item.name }}</a>
+  </li>
+</ul> -->
+
+<!-- <hr>
+<h2>Fashion Items</h2>
+<ul>
+  <li *ngFor="let item of fashionItems">
+    <a routerLink="/fashiondetails/{{ item.id }}">
+     
+      <h3>{{ item.name }}</h3>
+    </a>
+      <img [src]="item.imageUrl" alt="{{ item.name }}" width="150" height="150">
+      <p>{{ item.description }}</p>
+      <p>Price: ${{ item.price }}</p>
+   
+  </li>
+</ul> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-4"  style="max-width: 18rem;" *ngFor="let item of fashionItems">
+      <div class="card h-100">
+        <a routerLink="/fashiondetails/{{ item.id }}">
+          <img [src]="item.imageUrl" alt="{{ item.name }}" class="card-img-top">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <p class="card-text">Price: ${{ item.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <h2>Fashion Products</h2>
+<p>Filter by category:</p>
+<div class="btn-group" role="group" aria-label="Filter by category">
+  <button type="button" class="btn btn-secondary" (click)="filterByCategory('Jackets')">Jackets</button>
+  <button type="button" class="btn btn-secondary" (click)="filterByCategory('Shoes')">Shoes</button>
+  <button type="button" class="btn btn-secondary" (click)="filterByCategory('Pants')">pants</button>
+  <button type="button" class="btn btn-secondary" (click)="clearFilter()">Show All</button>
+</div>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+    <div class="card h-100">
+      <img class="card-img-top" [src]="product.imageUrl" [alt]="product.name">
+      <div class="card-body">
+        <h4 class="card-title">{{ product.name }}</h4>
+        <h5>${{ product.price }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+      </div>
+      <div class="card-footer">
+        <a [routerLink]="['/fashiondetails', product.id]" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<h2 style="font-family: 'Source Code Pro', monospace;            "class="text-center">Fashion Products</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-12 mb-4">
+      <div class="btn-group" role="group" aria-label="Filter by category">
+        <button type="button" class="btn btn-secondary" (click)="filterByCategory('Jackets')">Jackets</button>
+        <button type="button" class="btn btn-secondary" (click)="filterByCategory('Shoes')">Shoes</button>
+        <button type="button" class="btn btn-secondary" (click)="filterByCategory('Tshirt')">Tshirt</button>
+        <button type="button" class="btn btn-secondary" (click)="filterByCategory('Hoodie')">Hoodie</button>
+
+        <button type="button" class="btn btn-secondary" (click)="clearFilter()">Show All</button>
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+
+  <!-- <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4" style="max-width: 28rem;" *ngFor="let product of products">
+      <div class="card h-100">
+        <img class="card-img-top" [src]="product.imageUrl" [alt]="product.name">
+        <div class="card-body">
+          <h4 class="card-title">{{ product.name }}</h4>
+          <h5 class="card-price">${{ product.price }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+        </div>
+        <div class="card-footer">
+          <a [routerLink]="['/fashiondetails', product.id]" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="row">
+    <div class="col-md-3 mb-4"  style="max-width: 18rem;" *ngFor="let product of products">
+      <div class="card h-100">
+        <img class="card-img-top border rounded" [src]="product.imageUrl" [alt]="product.name" style="height: 12rem;">
+        <div class="card-body">
+          <h4 class="card-title">{{ product.name }}</h4>
+          <h5 class="card-price">${{ product.price }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+        </div>
+        <div class="card-footer">
+          <a [routerLink]="['/fashiondetails', product.id]" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 mb-4" *ngFor="let product of products">
+      <div class="card h-100">
+        <img class="card-img-top border rounded" [src]="product.imageUrl" [alt]="product.name" style="height: 16rem;">
+        <div class="card-body">
+          <h4 class="card-title">{{ product.name }}</h4>
+          <h5 class="card-price">${{ product.price }}</h5>
+          <p style="font-family: 'Merriweather', serif;" class="card-text">{{ product.description }}</p>
+        </div>
+        <div class="card-footer">
+          <a [routerLink]="['/fashiondetails', product.id]" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

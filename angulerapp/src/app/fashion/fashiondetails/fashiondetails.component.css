@@ -1,0 +1,17 @@
+.shadow {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  }
+  .img-3d {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .img-3d:hover {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: rotateX(10deg) rotateY(-10deg);
+  }
+  
+  .card-body{
+    background-image: linear-gradient(to right top, #646464, #856783, #bc5f81, #e85b5b, #f07300);
+}
+  

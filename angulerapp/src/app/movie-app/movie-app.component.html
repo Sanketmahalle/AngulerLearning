@@ -1,0 +1,207 @@
+<!-- <input type="text" placeholder="Search for a movie" (keyup)="search($event.target.value)">
+<ul>
+  <li *ngFor="let movie of movies" (click)="selectMovie(movie)">
+    {{ movie.Title }} ({{ movie.Year }})
+  </li>
+</ul>
+<div *ngIf="selectedMovie">
+  <h2>{{ selectedMovie.Title }} ({{ selectedMovie.Year }})</h2>
+  <p>{{ selectedMovie.Plot }}</p>
+  <img src="{{ selectedMovie.Poster }}">
+</div> -->
+<!-- <input type="text" placeholder="Search for a movie" class="form-control" (keyup)="search($event.target.value)">
+<div class="card-deck">
+  <div *ngFor="let movie of movies" class="card clickable" (click)="selectMovie(movie)">
+    <img [src]="movie.Poster !== 'N/A' ? movie.Poster : 'assets/placeholder-poster.png'" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.Title }}</h5>
+      <p class="card-text">{{ movie.Year }}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedMovie" class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img [src]="selectedMovie.Poster !== 'N/A' ? selectedMovie.Poster : 'assets/placeholder-poster.png'" class="card-img">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ selectedMovie.Title }} ({{ selectedMovie.Year }})</h5>
+        <p class="card-text">{{ selectedMovie.Plot }}</p>
+        <p class="card-text"><small class="text-muted">Directed by {{ selectedMovie.Director }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!selectedMovie && movies.length === 0" class="alert alert-info">No movies found.</div> -->
+
+
+
+
+
+
+
+<!-- <input type="text" placeholder="Search for a movie" (keyup)="search($event.target.value)">
+<ul class="movie-list">
+  <li *ngFor="let movie of movies" class="movie" (click)="selectMovie(movie)">
+    <div class="movie-poster">
+      <img [src]="movie.Poster === 'N/A' ? 'assets/placeholder.png' : movie.Poster">
+    </div>
+    <div class="movie-details">
+      <h2>{{ movie.Title }} ({{ movie.Year }})</h2>
+      <p>{{ movie.Type }}</p>
+    </div>
+  </li>
+</ul>
+<div class="selected-movie" *ngIf="selectedMovie">
+  <div class="selected-movie-poster">
+    <img [src]="selectedMovie.Poster === 'N/A' ? 'assets/placeholder.png' : selectedMovie.Poster">
+  </div>
+  <div class="selected-movie-details">
+    <h2>{{ selectedMovie.Title }} ({{ selectedMovie.Year }})</h2>
+    <p>{{ selectedMovie.Plot }}</p>
+    <p><strong>Directed by:</strong> {{ selectedMovie.Director }}</p>
+    <p><strong>Starring:</strong> {{ selectedMovie.Actors }}</p>
+    <p><strong>Runtime:</strong> {{ selectedMovie.Runtime }}</p>
+  </div>
+</div>
+<div class="no-results" *ngIf="movies.length === 0 && searchTerm !== ''">
+  <p>No results found for "{{ searchTerm }}"</p>
+</div> -->
+
+<!-- <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" placeholder="Search for a movie" (keyup)="search($event.target.value)">
+        <div class="no-results" *ngIf="movies.length === 0 && searchTerm !== ''">
+          <p>No results found for "{{ searchTerm }}"</p>
+        </div>
+        <ul class="movie-list">
+          <li *ngFor="let movie of movies" class="movie" (click)="selectMovie(movie)">
+            <div class="movie-poster">
+              <img [src]="movie.Poster === 'N/A' ? 'assets/placeholder.png' : movie.Poster">
+            </div>
+            <div class="movie-details">
+              <h2>{{ movie.Title }} ({{ movie.Year }})</h2>
+              <p>{{ movie.Type }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-8" *ngIf="selectedMovie">
+        <div class="selected-movie">
+          <div class="selected-movie-poster">
+            <img [src]="selectedMovie.Poster === 'N/A' ? 'assets/placeholder.png' : selectedMovie.Poster">
+          </div>
+          <div class="selected-movie-details">
+            <h2>{{ selectedMovie.Title }} ({{ selectedMovie.Year }})</h2>
+            <p>{{ selectedMovie.Plot }}</p>
+            <p><strong>Directed by:</strong> {{ selectedMovie.Director }}</p>
+            <p><strong>Starring:</strong> {{ selectedMovie.Actors }}</p>
+            <p><strong>Runtime:</strong> {{ selectedMovie.Runtime }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <div class="container">
+    <div class="search-container">
+      <input type="text" placeholder="Search for a movie" (keyup)="search($event.target.value)">
+      <button (click)="searchMovies(searchTerm.value)">Search</button>
+    </div>
+    <div class="movie-container">
+      <ul class="movie-list">
+        <li *ngFor="let movie of movies" class="movie" (click)="selectMovie(movie)">
+          <div class="movie-poster">
+            <img [src]="movie.Poster === 'N/A' ? 'assets/placeholder.png' : movie.Poster">
+          </div>
+          <div class="movie-details">
+            <h2>{{ movie.Title }} ({{ movie.Year }})</h2>
+            <p>{{ movie.Type }}</p>
+          </div>
+        </li>
+      </ul>
+      <div class="selected-movie" *ngIf="selectedMovie">
+        <div class="selected-movie-poster">
+          <img [src]="selectedMovie.Poster === 'N/A' ? 'assets/placeholder.png' : selectedMovie.Poster">
+        </div>
+        <div class="selected-movie-details">
+          <h2>{{ selectedMovie.Title }} ({{ selectedMovie.Year }})</h2>
+          <p>{{ selectedMovie.Plot }}</p>
+          <p><strong>Directed by:</strong> {{ selectedMovie.Director }}</p>
+          <p><strong>Starring:</strong> {{ selectedMovie.Actors }}</p>
+          <<p><strong>Runtime:</strong> {{ selectedMovie.Runtime }}</p>
+        </div>
+      </div>
+      <div class="no-results" *ngIf="movies.length === 0 && searchTerm !== ''">
+        <p>No results found for "{{ searchTerm }}"</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search for a movie" aria-label="Search for a movie" aria-describedby="button-search" (keyup)="search($event.target.value)">
+          <button class="btn btn-primary" type="button" id="button-search" (click)="searchMovies(searchTerm.value)">Search</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-deck">
+          <div class="card mb-3" *ngFor="let movie of movies" (click)="selectMovie(movie)">
+            <img class="card-img-top" [src]="movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/300x450.png?text=No+Poster+Available'" alt="{{ movie.Title }} poster">
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.Title }}</h5>
+              <p class="card-text">{{ movie.Year }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="selectedMovie">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <img class="card-img-top" [src]="selectedMovie.Poster !== 'N/A' ? selectedMovie.Poster : 'https://via.placeholder.com/300x450.png?text=No+Poster+Available'" alt="{{ selectedMovie.Title }} poster">
+          <div class="card-body">
+            <h5 class="card-title">{{ selectedMovie.Title }} ({{ selectedMovie.Year }})</h5>
+            <p class="card-text">{{ selectedMovie.Plot }}</p>
+            <p class="card-text"><small class="text-muted">IMDB Rating: {{ selectedMovie.imdbRating }}/10</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+
+
+
+  

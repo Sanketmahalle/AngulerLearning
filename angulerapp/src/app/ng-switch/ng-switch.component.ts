@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyserviceService } from '../services/my-service.service';
 
 @Component({
   selector: 'app-ng-switch',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ng-switch.component.css']
 })
 export class NgSwitchComponent implements OnInit {
+ data =[];
+  constructor(private _userData:MyserviceService) { }
 
-  constructor() { }
-
+     
   ngOnInit() {
+this.data  = this._userData.products
+
   }
 
 }

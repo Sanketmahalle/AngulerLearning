@@ -51,10 +51,42 @@ import { AssinReactiveComponent } from './assin-reactive/assin-reactive.componen
 import { ReactiveFormAssignment2Component } from './reactive-form-assignment2/reactive-form-assignment2.component';
 import { BlackBoxComponent } from './black-box/black-box.component';
 import { ValidationComponent } from './validation/validation.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Content1Component } from './content1/content1.component';
 import { MyserviceService } from './services/my-service.service';
 import { UserDataService } from './services/user-data.service';
+import { PipeExampleComponent } from './pipe-example/pipe-example.component';
+import { CustomPipePipe } from './custom-pipe.pipe';
+import { SearchPipe } from './search.pipe';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { FilterByNamePipePipe } from './filter-by-name-pipe.pipe';
+import { MovieAppComponent } from './movie-app/movie-app.component';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
+import { Comp3Component } from './comp3/comp3.component';
+import { Comp4Component } from './comp4/comp4.component';
+import { LoginComponentComponent } from './login-component/login-component.component';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductComponent } from './product/product.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
+import { DemoUserComponent } from './demo-user/demo-user.component';
+import { DemoUserDetailsComponent } from './demo-user-details/demo-user-details.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
+import { ProductModule } from './product.module';
+import { OrdersModule } from './orders/orders.module';
+import { FashionModule } from './fashion/fashion.module';
+import { RouterModule } from '@angular/router';
+import { AdminModule } from './admin/admin.module';
+import { ApicurdComponent } from './apicurd/apicurd.component';
+import { TodoComponent } from './todo/todo.component';
+import { AuthServiceService } from './services/auth-service.service';
+
+import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
+import { WikiModule } from './wiki/wiki.module';
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 
@@ -72,7 +104,7 @@ import { UserDataService } from './services/user-data.service';
     NgForNgIfPracticeComponent,
     NgSwitchComponent,
     DirectivesAssignComponent,
-    CustomDirective,
+   
     TemplateFormsComponent,
     ReactiveFormComponent,
     AssignmentTempleteFormComponent,
@@ -82,9 +114,32 @@ import { UserDataService } from './services/user-data.service';
     BlackBoxComponent,
     ValidationComponent,
     Content1Component,
-   
+    PipeExampleComponent,
+    CustomPipePipe,
+    SearchPipe,
+    ProductFilterComponent,
+    FilterByNamePipePipe,
+    MovieAppComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component,
+    LoginComponentComponent,
+    HomeComponentComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    PageNotFoundComponent,
+    ProductComponent,
+    DemopostComponent,
+    DemopostdetailsComponent,
+    DemoUserComponent,
+    DemoUserDetailsComponent,
+    UserinfoComponent,
+    ApicurdComponent,
+    TodoComponent
   ],
   imports: [
+    ProductModule,
   HttpClientModule,
     BrowserModule,
     AppRoutingModule,
@@ -113,10 +168,21 @@ import { UserDataService } from './services/user-data.service';
     MatCheckboxModule,
     MatStepperModule,
     MatProgressBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OrdersModule,
+    FashionModule,
+    RouterModule ,
+    WikiModule,
+    FormsModule 
     
   ],
-  providers: [MyserviceService,UserDataService],
+  providers: [
+  //   {
+  //   provide: HTTP_INTERCEPTORS,
+  //   useClass: AuthServiceService,
+  //   multi: true
+  // },
+   MyserviceService,UserDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

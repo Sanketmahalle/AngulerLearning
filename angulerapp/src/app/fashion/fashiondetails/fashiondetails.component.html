@@ -1,0 +1,71 @@
+<!-- 
+<h2>Fashion Item Detail</h2>
+
+<div *ngIf="id">
+  <h3>Item {{ id }}</h3>
+
+  <p>This is a detailed description of the fashion item with ID {{ id }}.</p>
+</div>
+
+<div *ngIf="!id">
+  <p>No fashion item selected.</p>
+</div> -->
+
+<!-- <h2>Fashion Item Details</h2>
+<div *ngIf="fashionItem">
+  <h3>{{ fashionItem.name }}</h3>
+  <p>{{ fashionItem.description }}</p>
+  <P>{{fashionItem.imageUrl}}</P>
+  <h3>{{fashionItem.price}}</h3>
+</div>
+<div *ngIf="!fashionItem">
+  <p>No fashion item found with ID {{ itemId }}</p>
+</div> -->
+
+<!-- <h2>Fashion Item Details</h2>
+<div *ngIf="fashionItem">
+  <h3>{{ fashionItem.name }}</h3>
+  <img [src]="fashionItem.imageUrl" alt="{{ fashionItem.name }}" width="300" height="300">
+  <p>{{ fashionItem.description }}</p>
+  <p>Price: ${{ fashionItem.price }}</p>
+</div>
+<div *ngIf="!fashionItem">
+  <p>No fashion item found with ID {{ itemId }}</p>
+</div> -->
+
+
+<!--? <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" class="img-fluid">
+    </div>
+    <div class="col-md-6">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p><strong>Price: </strong>{{ product.price | currency:'USD' }}</p>
+    </div>
+  </div>
+</div> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<h2 class="text-center" style="font-family: 'Roboto Slab', serif;
+;">Fashion Item Detail</h2>
+
+<div class="container">
+  <div class="card shadow" style="max-width: 28rem;">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <img class="card-img-top border rounded img-3d" [src]="product.imageUrl" alt="{{ product.name }}" style="height: 12rem; " class="img-fluid rounded shadow-lg border">
+        </div>
+        <div class="col-md-6">
+          <h2 class="card-title">{{ product.name }}</h2>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text"><strong>Price: </strong>{{ product.price | currency:'USD' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

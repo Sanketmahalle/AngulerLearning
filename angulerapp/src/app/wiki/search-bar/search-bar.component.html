@@ -1,0 +1,18 @@
+<div   class="title has-text-centered has-text-info is-1">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/800px-Wikipedia-logo-v2.svg.png" alt="Wikipedia logo" style="width: 50px;">
+  <h1 class="title has-text-info is-1" style="display: inline-block;">Wikipedia Api</h1>
+</div>
+  <br />
+  <div class="box">
+    <form (submit)="onFormSubmit($event)">
+      <input
+        class="input is-rounded"
+        type="text"
+        style="font-weight: bold;"
+        (input)="term = $event.target.value"
+        placeholder="Search"
+      />
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </div>
+

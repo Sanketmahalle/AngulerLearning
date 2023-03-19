@@ -9,12 +9,30 @@ import { MyserviceService } from '../services/my-service.service';
 export class Content1Component implements OnInit {
   users: any[];
 
+product : {};
+
+urlnamesearch:string='';
+
+joke: any;
+questions: any;
+
   constructor(private _userData:MyserviceService) { }
+
   ngOnInit() {
-    // this.product=this._userData.products
-    this._userData.getUsers()
-    .subscribe((data: any[])=>{     
+   this.product = this._userData.products
+
+
+    this._userData.getUsers().subscribe((data)=>{     
       this.users = data;
+    });
+   
+
+
+    this._userData.getJoke().subscribe(data => {
+      this.joke = data;
+    });
+    this._userData.getQuestions().subscribe(data => {
+      this.questions = data.results;
     });
   }
 

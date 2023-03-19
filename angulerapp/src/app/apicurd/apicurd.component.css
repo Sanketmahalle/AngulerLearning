@@ -1,0 +1,25 @@
+/* News table */
+.table-news {
+    background-color: #f2f2f2;
+  }
+  
+  /* Quotes table */
+  .table-quotes {
+    background-color: #d9d9d9;
+  }
+  
+  /* Table headers */
+  thead th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Table rows */
+  tbody tr:nth-child(even) {
+    background-color: #a39999;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  

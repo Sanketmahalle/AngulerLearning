@@ -1,15 +1,22 @@
 <p>content1 works!</p>
-<!-- <div class="card">
+<div class="card">
    <div class="card-body">
+
     <ng-container *ngFor="let product of product ">
+
         Product name : <strong class="text-success">{{product.name}}</strong> 
          id <strong class="text-success">{{product.id}}</strong><br>
-         username <strong class="text-success">{{product.username}}</strong>
          
+    
     </ng-container>
+
   </div>
- </div> -->
- <table mat-table [dataSource]="users" class="my-table">
+ </div>
+ <div class="col-md-8">
+  <label for="search">Search by name</label>
+  <input type="text" name="" class="form-control" [(ngModel)]="urlnamesearch" placeholder="enter user name">
+</div>
+ <table mat-table [dataSource]="users |search:urlnamesearch" class="my-table">
 
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -48,4 +55,41 @@
     <tr mat-header-row *matHeaderRowDef="['id', 'name', 'email','phone','website','company','address']"></tr>
     <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'email', 'phone','website','company','address']"></tr>
   </table>
-  
+  <br>
+
+  <!-- <hr><hr>
+  <div class="container">
+    <h1>Random Joke</h1>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ joke.setup }}</h5>
+        <p class="card-text">{{ joke.delivery }}</p>
+      </div>
+    </div>
+  </div>
+  <hr><hr><br>
+  <div class="container">
+    <h1>Trivia Questions</h1>
+    <div class="row">
+      <div class="col-12" *ngFor="let question of questions">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ question.category }}</h5>
+            <p class="card-text">{{ question.question }}</p>
+            <ul>
+              <li *ngFor="let answer of question.incorrect_answers">
+                {{ answer }}
+              </li>
+              <li>
+                {{ question.correct_answer }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+   -->

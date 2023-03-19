@@ -22,4 +22,8 @@ export class UserDataService {
   {
   return this.httpclient.get(this.apiUrl)
   }
+  
+   getPostById(id: number) {
+   return this.httpclient.get(this.apiUrl+ '/'+ id);
+  }
 }

@@ -1,0 +1,23 @@
+<p>comp4 works!</p>
+<!-- <div class="box">
+    User name: <strong>{{userName}}</strong>
+    <br><br>
+    <input type="text" placeholder="update user  name" #uname>
+    <button class="btn btn-primary ms-2" (click)="updateUserName(uname)" >Update</button>
+</div> -->
+
+
+<form (submit)="submitForm()" class="box">
+    <div class="form-group">
+      <label for="name">Name:</label>
+
+      {{user.name}}
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <!-- <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email"> -->
+      {{user.email}}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  

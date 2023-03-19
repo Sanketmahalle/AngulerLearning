@@ -1,0 +1,92 @@
+.movie-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .movie {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .movie:hover {
+    box-shadow: 0 0 5px #ccc;
+  }
+  
+  .movie-poster img {
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+  }
+  
+  .movie-details {
+    padding: 10px;
+    flex: 1;
+  }
+  
+  .selected-movie {
+    display: flex;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  }
+  
+  .selected-movie-poster img {
+    max-height: 400px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .selected-movie-details {
+    padding-left: 20px;
+  }
+  
+  .no-results {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .search-container input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f2f2f2; /* light gray */
+    outline: none; /* remove blue outline when focused */
+  }
+  
+  .search-container input[type="text"]:focus {
+    border-color: #007bff; /* change border color when focused */
+  }
+  
+  .search-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .search-container button:hover {
+    background-color: #0056b3; /* darker blue on hover */
+  }
