@@ -1,0 +1,15 @@
+<h1>Product List</h1>
+<div *ngFor="let product of products">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <button *ngIf="!isProductInCart(product)" (click)="addToCart(product)">Add to Cart</button>
+  <div *ngIf="isProductInCart(product)">
+    <button (click)="changeProductQuantity(product, 'decrement')">-</button>
+    {{ getProductQuantity(product) }}
+    <button (click)="changeProductQuantity(product, 'increment')">+</button>
+  </div>
+</div>
+<h2>Cart ({{ getCartTotalQuantity() }})</h2>
+<div *ngFor="let item of cartItems">
+  <p>{{ item.product.name }} ({{ item.quantity }})</p>
+</div>

@@ -21,6 +21,8 @@ import { TodoComponent } from './todo/todo.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { AuthGuard } from './auth.guard';
 import { WikiopComponent } from './wiki/wikiop/wikiop.component';
+import { ShoppingLoginComponent } from './ShoppingCard/shopping/shopping-login/shopping-login.component';
+import { ShoppinghomeComponent } from './ShoppingCard/shopping/shopping-login/shoppinghome/shoppinghome.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'home', pathMatch:'full'}, // http:localhost:4200 
@@ -41,6 +43,13 @@ children:[
 {path:'userinfo',component:UserinfoComponent},
 {path:'login',  component:LoginComponentComponent},
 {path:'post',component:DemopostComponent},
+{path:'shoppingcart',component:ShoppingLoginComponent,
+children:[
+  {path:'shoppinghome',canActivate:[AuthGuard],component:ShoppinghomeComponent}
+]
+
+},
+
 {path:'order',component:OrderlistComponent},
 {path:'wiki',component:WikiopComponent},
 {path:'fashion',component:FashionlistComponent},

@@ -8,5 +8,16 @@
       "id": 1678942738646,
       "title": "create angular form application"
     }
+  ],
+
+  "users": [
+    {
+      "email": "test@test.com",
+      "password": "test123"
+    },
+    {
+      "email": "jane.doe@example.com",
+      "password": "password456"
+    }
   ]
 }

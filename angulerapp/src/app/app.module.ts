@@ -87,6 +87,8 @@ import { AuthServiceService } from './services/auth-service.service';
 
 import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
 import { WikiModule } from './wiki/wiki.module';
+import { HookComponent } from './hook/hook.component';
+import { ShoppingModule } from './ShoppingCard/shopping/shopping.module';
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 
@@ -136,7 +138,8 @@ import { WikiModule } from './wiki/wiki.module';
     DemoUserDetailsComponent,
     UserinfoComponent,
     ApicurdComponent,
-    TodoComponent
+    TodoComponent,
+    HookComponent
   ],
   imports: [
     ProductModule,
@@ -173,7 +176,8 @@ import { WikiModule } from './wiki/wiki.module';
     FashionModule,
     RouterModule ,
     WikiModule,
-    FormsModule 
+    FormsModule ,
+    ShoppingModule
     
   ],
   providers: [
